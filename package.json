@@ -1,0 +1,23 @@
+{
+  "name": "sns-service",
+  "version": "1.0.0",
+  "description": "SNS(Social Networking Service) 서버 구현 💌",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm install && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syoungee/sns-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syoungee/sns-service/issues"
+  },
+  "homepage": "https://github.com/syoungee/sns-service#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
