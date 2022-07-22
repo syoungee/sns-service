@@ -1,23 +1,15 @@
 const UserService = require("../services/user.service.js");
 
 class UserController {
-  static async signup (req, res) {
+  static async signup(req, res) {
+    const {email, password, user_name} = req.body();
     try {
-      // await UserService.createUser();
-      res.status(201)
+      await UserService.createUser(email, password, user_name);
+      res.status(201).send({ message: "아이디가 생성되었습니다!" });
     } catch (err) {
       console.log(err);
     }
-  };
-
-  static async signin (req, res) {
-    const userId = req.params.userId;
-    try {
-      //res.status(201).json(result);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  }
 }
 
 module.exports = UserController;

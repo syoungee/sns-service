@@ -1,18 +1,18 @@
 const res = require("express/lib/response");
-// const mysqlPool = require("../db/mysqlConfig");
+const mysqlPool = require("../db/mysqlConfig");
 
 class UserService {
-  static async createUser() {
-    // const sql = `INSERT INTO user values ();`;
-    //let connection = null;
+  static async createUser(email, password, user_name) {
+    const sql = `insert into user (email, password, user_name) values (?, ?, ?);`;
+    let connection = null;
     try {
-      // connection = await mysqlPool.getConnection(async (conn) => conn);
-      // const [result] = await connection.query(sql);
-      // return result;
+      connection = await mysqlPool.getConnection(async (conn) => conn);
+      const [result] = await connection.query(sql, [email, password, user_name]);
+      return result;
     } catch (err) {
       console.log(err);
     } finally {
-      //connection.release();
+      if (connection) connection.release();
     }
   }
 }
