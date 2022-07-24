@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const mysqlPool = require("../db/mysqlConfig");
 
 class UserService {
