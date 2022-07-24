@@ -1,4 +1,5 @@
 const mysqlPool = require("../db/mysqlConfig");
+const { createToken } = require("../middlewares/jwt/createToken");
 
 class UserService {
   static async createUser(email, password, user_name) {
@@ -7,21 +8,8 @@ class UserService {
     try {
       connection = await mysqlPool.getConnection(async (conn) => conn);
       const [result] = await connection.query(sql, [email, password, user_name]);
-      return result;
-    } catch (err) {
-      console.log(err);
-    } finally {
-      if (connection) connection.release();
-    }
-  }
-  static async login(email, password) {
-    const sql = `select user_id, email, user_name from user where email='${email}' and password='${password}';`;
-    let connection = null;
-    try {
-      connection = await mysqlPool.getConnection(async (conn) => conn);
-      const [[result]] = await connection.query(sql, [email, password]);
-      console.log("login함수 result?", result);
-      return result;
+
+      return createToken(email);
     } catch (err) {
       console.log(err);
     } finally {
