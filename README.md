@@ -1,8 +1,24 @@
 <div align="center">
 
-# sns-service
+# SNS(Social Networking Service) 서버 구현 💌
 
-SNS(Social Networking Service) 서버 구현 💌
+<p>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express-000000?style=flat&logo=Express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat&logo=Redis&logoColor=white"/>
+</p>
+
+## 📒 Project
+
+  <h4> ⏳  개발 기간  </h4> 
+  2022/07/18  ~ 2022/07/25
+<br/>
+
+## ✍🏻 프로젝트 설명
+
+## 🧚🏻 구현 기능
 
 <b>✏️ ERD table</b>
 ![image](https://user-images.githubusercontent.com/22606199/180637148-a90bbd2a-475d-4457-aec7-575bbadea1aa.png)
