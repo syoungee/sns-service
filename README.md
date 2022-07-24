@@ -1,6 +1,6 @@
 <div align="center">
 
-# SNS(Social Networking Service) 서버 구현 💌
+# SNS(Social Networking Service) <br/> 서버 구현 💌
 
 <p>
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white"/>
