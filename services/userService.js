@@ -7,7 +7,7 @@ class UserService {
     let connection = null;
     try {
       connection = await mysqlPool.getConnection(async (conn) => conn);
-      const [result] = await connection.query(sql, [email, password, user_name]);
+      await connection.query(sql, [email, password, user_name]);
 
       return createToken(email);
     } catch (err) {
