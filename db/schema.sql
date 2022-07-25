@@ -12,6 +12,8 @@ create table user(
 create table posting (
   post_id integer auto_increment,
   user_id integer not null,
+  article text not null,
+  main_text text not null,
   created_at datetime default now(), 
   updated_at datetime, 
   likes integer default 0,
@@ -29,4 +31,12 @@ create table likes (
   REFERENCES posting(post_id) ON UPDATE CASCADE,
   constraint likes_fk2 FOREIGN KEY(user_id)
   REFERENCES user(user_id) ON UPDATE CASCADE 
+);
+
+create table hashtags (
+  tag_id integer auto_increment,
+  post_id integer not null,
+  tag_name varchar(10) not null,
+  CONSTRAINT hashtags_fk FOREIGN KEY(post_id)
+  REFERENCES posting(post_id) ON UPDATE CASCADE
 );
