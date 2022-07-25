@@ -37,6 +37,7 @@ create table hashtags (
   tag_id integer auto_increment,
   post_id integer not null,
   tag_name varchar(10) not null,
+  primary key(tag_id),
   CONSTRAINT hashtags_fk FOREIGN KEY(post_id)
   REFERENCES posting(post_id) ON UPDATE CASCADE
 );
