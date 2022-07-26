@@ -46,6 +46,9 @@ v. 데이터베이스 모델링
 <b>✏️ ERD table</b>
 ![image](https://user-images.githubusercontent.com/22606199/180918915-2d53a1db-6df2-43d0-9913-c45afebb8440.png)
 
+<details>
+<summary>Database structures(click!)</summary>
+
 ```sql
 Table "user" {
   "user_id" integer [pk, increment]
@@ -86,6 +89,9 @@ Ref "likes_fk1":"posting"."post_id" < "likes"."post_id" [update: cascade]
 Ref "likes_fk2":"user"."user_id" < "likes"."user_id" [update: cascade]
 Ref "hashtags_fk":"posting"."post_id" < "hashtags"."post_id" [update: cascade]
 ```
+
+</details>
+</br>
 
 <b> 🍉 RestAPI</b>
 
