@@ -21,6 +21,39 @@ class PostController {
       console.log(err);
     }
   }
+  static async readPost(req, res) {
+    console.log("readPost 함수 호출");
+    try {
+      const result = await PostService.getUnDeletedPost();
+      console.log(result); // type array
+      res.status(201).send({ result, message: "게시글이 모두 조회되었습니다!" });
+    } catch (err) {
+      console.log("readPost 함수 에러");
+      console.log(err);
+    }
+  }
+  static async deletePost(req, res) {
+    console.log("deletePost 함수 호출");
+    const post_id = req.body.post_id;
+    try {
+      await PostService.removePost(post_id);
+      res.status(201).send({ message: "게시글이 삭제되었습니다!" });
+    } catch (err) {
+      console.log("deletePost 함수 에러");
+      console.log(err);
+    }
+  }
+  static async restorePost(req, res) {
+    console.log("restorePost 함수 호출");
+    const post_id = req.body.post_id;
+    try {
+      await PostService.restorePost(post_id);
+      res.status(201).send({ message: "게시글이 복구되었습니다!" });
+    } catch (err) {
+      console.log("restorePost 함수 에러");
+      console.log(err);
+    }
+  }
 }
 
 module.exports = PostController;
