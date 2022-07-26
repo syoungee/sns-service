@@ -14,7 +14,7 @@
 
 ## 📒 Project
 
-개인으로 진행한 프로젝트입니다😎
+개인으로 진행한 프로젝트입니다😎 </br>
 [프로젝트 명세](https://misty-lungfish-f16.notion.site/SNS-server-9d3387a620b74aeabb8edeea0e6ef88f)
 
   <h4> ⏳  개발 기간  </h4> 
