@@ -7,22 +7,17 @@ class PostController {
     return today.toISOString().replace("T", " ").substring(0, 19);
   }
   static async createPost(req, res) {
-    console.log("createPost 함수 호출", req.body);
     // req.body: user_id, article, main_text, updated_at
     const now_time = await PostController.timestamp();
-    console.log(now_time);
     const data = { ...req.body, updated_at: now_time };
-    console.log("전송하는 데이터?", data);
     try {
       await PostService.newPost(data);
       res.status(201).send({ message: "게시글이 작성되었습니다!" });
     } catch (err) {
-      console.log("createPost 함수 에러");
       console.log(err);
     }
   }
   static async readPost(req, res) {
-    console.log("readPost 함수 호출");
     try {
       const result = await PostService.getUnDeletedPost();
       console.log(result); // type array
@@ -33,13 +28,11 @@ class PostController {
     }
   }
   static async deletePost(req, res) {
-    console.log("deletePost 함수 호출");
     const post_id = req.body.post_id;
     try {
       await PostService.removePost(post_id);
       res.status(201).send({ message: "게시글이 삭제되었습니다!" });
     } catch (err) {
-      console.log("deletePost 함수 에러");
       console.log(err);
     }
   }
@@ -50,7 +43,6 @@ class PostController {
       await PostService.restorePost(post_id);
       res.status(201).send({ message: "게시글이 복구되었습니다!" });
     } catch (err) {
-      console.log("restorePost 함수 에러");
       console.log(err);
     }
   }
