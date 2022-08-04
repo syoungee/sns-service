@@ -12,6 +12,16 @@ class UserController {
       console.log(err);
     }
   }
+  static async findAll(req, res) {
+    try {
+      const users = await UserService.findAll();
+      return res.status(200).send(users);
+    } catch (err) {
+      console.log("findAll 함수 에러");
+      console.log(err);
+      next({ statusCode: 500, message: ERROR });
+    }
+  }
 }
 
 module.exports = UserController;

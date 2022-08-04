@@ -2,6 +2,8 @@ const { verifyToken } = require("./jwt/verifyToken");
 
 const authValidation = (req, res, next) => {
   const { authorization } = req.headers;
+  console.log(authorization);
+  console.log("autorization 함수 호출");
 
   if (!authorization) {
     return res.status(401).json({
@@ -15,7 +17,6 @@ const authValidation = (req, res, next) => {
 
 const authUser = (req, res, next) => {
   const { token } = req;
-
   const decoded = verifyToken(token);
 
   if (!decoded) {
